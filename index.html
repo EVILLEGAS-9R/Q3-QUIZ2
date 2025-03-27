@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="ticket-header">Ticketing Center</h1>
+
+        <details class="ticket-section" ontoggle="message()">
+            <summary>Personal Information</summary>
+            <i>Fill out the form below.</i>
+            <form id="ticket-form">
+                <label>Enter your name:</label>
+                <input type="text" id="fname" class="form-control" placeholder="Enter your name">
+                <br>
+                <label>Email:</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                <br>
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </details>
+
+        <br>
+
+       
+        <details class="ticket-section" ontoggle="message()">
+            <summary>Ticket Price</summary>
+            <i>Check your ticket price.</i>
+            <br>
+
+            <label>Choose your seat:</label>
+            <select id="seat" class="form-select">
+                <option value="lb">Lower Box</option>
+                <option value="ub">Upper Box</option>
+                <option value="gen">General Admission</option>
+            </select>
+            <br>
+
+            <label>Choose an option:</label>
+            <select id="option" class="form-select">
+                <option value="reg">Regular</option>
+                <option value="stu">Student</option>
+            </select>
+            <br>
+
+            <button class="btn btn-success" onclick="ticketPrice()">Check Price</button>
+        </details>
+
+        <br>
+
+       
+        <details class="ticket-section" ontoggle="message()">
+            <summary>Print Ticket</summary>
+            <i>Select your ticket</i>
+            <div class="ticket-image">
+                <img src="https://img.freepik.com/free-photo/yellow-ticket-top-view_1101-121.jpg" alt="Ticket">
+            </div>
+            <br>
+            <button class="btn btn-warning" onclick="printTicket()">Print Ticket</button>
+            <button class="btn btn-danger" onclick="window.location.reload()">Buy More Tickets</button>
+        </details>
+
+        <br>
+        <div class="footer">
+            <p>&copy; AY 2025 | ICT-9 RUBY | QUIZ 2| ENZO VILLEGAS</p>
+        </div>
+    </div>
+
+   
+    <script>
+        function message() {
+            alert("The section has been toggled.");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const submitBtn = document.getElementById("submit");
+
+            
+            submitBtn.addEventListener("mouseover", function () {
+                submitBtn.style.color = "green";
+                submitBtn.style.background = "pink";
+            });
+
+            submitBtn.addEventListener("mouseout", function () {
+                submitBtn.style.color = "white";
+                submitBtn.style.background = "navy";
+            });
+
+           
+            document.getElementById("fname").addEventListener("input", function () {
+                this.value = this.value.toUpperCase();
+            });
+
+          
+            document.getElementById("ticket-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+                alert("Form submitted successfully!");
+            });
+        });
+
+        function ticketPrice() {
+            alert("The ticket price is 1600. Please proceed to the next station.");
+        }
+
+        function printTicket() {
+            alert("Check your email for your ticket!");
+        }
+    </script>
+</body>
+</html>

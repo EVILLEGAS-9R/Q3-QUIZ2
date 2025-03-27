@@ -1,0 +1,38 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.ticket-header {
+    background: purple;
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ticket-section {
+    background: pink;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ticket-section summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ticket-image img {
+    width: 200px;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
